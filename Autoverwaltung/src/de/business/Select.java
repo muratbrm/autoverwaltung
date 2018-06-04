@@ -3,6 +3,8 @@ package de.business;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import de.db.MySQLConn;
 import de.model.Auto;
@@ -46,15 +48,15 @@ public class Select {
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = mySQLConn.getConnection().prepareStatement("SELECT * FROM auto WHERE fin = ?");
-			pstmt.setInt(1, auto.getFin());
+			pstmt.setString(1, auto.getFin());
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
-				return new Auto(rs.getInt("FIN"), rs.getString("Motor"), rs.getInt("Tueren"), 
+				auto = new Auto(rs.getString("FIN"), rs.getString("Motor"), rs.getInt("Tueren"), 
 						rs.getInt("Leistung"), rs.getString("Fahrzeugart"), rs.getInt("Sitze"), 
-						rs.getInt("Baujahr"), rs.getString("Austattungen"));
+						rs.getDate("Baujahr"), rs.getString("Austattungen"),
+						rs.getString("Modell"), rs.getInt("Preis"));
 			}
 		} catch (SQLException e) {
-		
 			e.printStackTrace();
 		}finally {
 			if(pstmt != null)
@@ -64,6 +66,31 @@ public class Select {
 					e.printStackTrace();
 				}
 		}
-		return null;
+		return auto;
+	}
+	
+	public List<Auto> selectAllAutoMD() {
+		PreparedStatement pstmt = null;
+		List<Auto> auto = new ArrayList<>();
+		try {
+			pstmt = mySQLConn.getConnection().prepareStatement("SELECT * FROM auto");
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				auto.add(new Auto(rs.getString("FIN"), rs.getString("Motor"), 
+						rs.getInt("Tueren"), rs.getInt("Leistung"), rs.getString("Fahrzeug"), 
+						rs.getInt("Sitze"), rs.getDate("Baujahr"), rs.getString("Austattungen"),
+						rs.getString("Modell"), rs.getInt("Preis")));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}	
+		return auto;
 	}
 }

@@ -6,10 +6,9 @@ public class Users implements UserTypeEnum{
 	private final String id;
 	private final String pwd;
 	public static String userType;
-	public Users(String id, String pwd, String userType) {
+	public Users(String id, String pwd) {
 		this.id = id;
 		this.pwd = pwd;
-		Users.userType = userType;
 	}
 
 	public String getId() {

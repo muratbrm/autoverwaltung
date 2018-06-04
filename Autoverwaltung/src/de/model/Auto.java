@@ -1,16 +1,20 @@
 package de.model;
 
+import java.sql.Date;
+
 public class Auto {
-	private final int fin;
+	private final String fin;
 	private final String motor;
 	private final int tueren;
 	private final int leistung;
 	private final String fahrzeugart;
 	private final int sitze;
-	private final int baujahr;
+	private final Date baujahr;
 	private final String austattungen;
-	public Auto(int fin, String motor, int tueren, int leistung, String fahrzeugart, int sitze, int baujahr,
-			String austattungen) {
+	private final String modell;
+	private final int preis;
+	public Auto(String fin, String motor, int tueren, int leistung, String fahrzeugart, int sitze, Date baujahr,
+			String austattungen, String modell, int preis) {
 		this.fin = fin;
 		this.motor = motor;
 		this.tueren = tueren;
@@ -19,8 +23,10 @@ public class Auto {
 		this.sitze = sitze;
 		this.baujahr = baujahr;
 		this.austattungen = austattungen;
+		this.modell = modell;
+		this.preis = preis;
 	}
-	public int getFin() {
+	public String getFin() {
 		return fin;
 	}
 	public String getMotor() {
@@ -38,11 +44,16 @@ public class Auto {
 	public int getSitze() {
 		return sitze;
 	}
-	public int getBaujahr() {
+	public Date getBaujahr() {
 		return baujahr;
 	}
 	public String getAustattungen() {
 		return austattungen;
 	}
-	
+	public String getModell() {
+		return modell;
+	}
+	public int getPreis() {
+		return preis;
+	}
 }
