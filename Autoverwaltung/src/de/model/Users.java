@@ -1,5 +1,7 @@
 package de.model;
 
+import de.enums.UserTypeEnum;
+
 public class Users implements UserTypeEnum{
 	private final String id;
 	private final String pwd;

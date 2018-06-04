@@ -1,4 +1,4 @@
-package de.model;
+package de.enums;
 
 public interface UserTypeEnum {
 	static final String ADMIN = "Admin";
