@@ -93,4 +93,26 @@ public class Select {
 		}	
 		return auto;
 	}
+	
+	public List<Users> selectAllUsers(){
+		PreparedStatement pstmt = null;
+		List<Users> userList = new ArrayList<>();
+		try {
+			pstmt = mySQLConn.getConnection().prepareStatement("SELECT * FROM Users");
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				userList.add(new Users(rs.getString("id"), rs.getString("pwd")));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+		return userList;
+	}
 }

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import de.db.MySQLConn;
 import de.model.Auto;
+import de.model.Users;
 
 public class Update {
 	private final MySQLConn mySQLConn = new MySQLConn();
@@ -26,6 +27,25 @@ public class Update {
 			pstmt.setInt(10, auto.getPreis());
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+	}
+	
+	public void updateUserType(Users user) {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = mySQLConn.getConnection().prepareStatement("UPDATE Users SET UserType = ? WHERE ID = ?");
+			pstmt.setString(1, Users.userType);
+			pstmt.setString(2, user.getId());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			if(pstmt != null)
