@@ -774,10 +774,6 @@ standard deployment descriptor.
 -->
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <servlet>
-    <servlet-name>personServlet</servlet-name>
-    <servlet-class>de.servlets.PersonServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>selectAllAutosServlet</servlet-name>
     <servlet-class>de.servlets.SelectAllAutoServlet</servlet-class>
   </servlet>
@@ -806,10 +802,6 @@ standard deployment descriptor.
   
   
   
-  <servlet-mapping>
-    <servlet-name>personServlet</servlet-name>
-    <url-pattern>/personinfo</url-pattern>
-  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>selectAllAutosServlet</servlet-name>
     <url-pattern>/selectAllAutos</url-pattern>

@@ -29,9 +29,20 @@ public class LogUserServlet extends HttpServlet {
 		String id = req.getParameter("id");
 		String pwd = req.getParameter("pwd");
 		Select sel = new Select();
-		sel.setUserType(new Users(id, pwd));
-		req.setAttribute(Users.userType, "usertype");
-		req.getRequestDispatcher("/SelectAllAutoServlet").forward(req, resp);
+		Users users = new Users(id, pwd);
+		sel.setUserType(users);
+		
+//		req.setAttribute("usertype", Users.userType);
+		req.setAttribute("users", users);
+		
+		
+		System.out.println(Users.userType);
+//		req.getRequestDispatcher("/SelectAllAutoServlet").forward(req, resp);
+//		resp.getWriter().write(id);
+//		resp.getWriter().write(pwd);
+//		resp.getWriter().write(Users.userType);
+		
+		req.getRequestDispatcher("Test3.jsp").forward(req, resp);
 	}
 
 }
