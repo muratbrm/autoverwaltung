@@ -15,13 +15,13 @@ import de.model.Users;
  * Servlet implementation class UpdateUserServlet
  */
 @WebServlet("/UpdateUserServlet")
-public class UpdateUserServlet extends HttpServlet {
+public class UpdateUserTypeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateUserServlet() {
+    public UpdateUserTypeServlet() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class UpdateUserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Update  update = new Update();
 		Users.userType = request.getParameter("usertype");
-		update.updateUserType(new Users(request.getParameter("id"), request.getParameter("pwd")));
+		update.updateUserType(new Users(request.getParameter("id"), request.getParameter("pwd"), request.getParameter("email")));
 	}
 
 

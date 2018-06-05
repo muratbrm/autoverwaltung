@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.cj.xdevapi.Result;
+
 import de.db.MySQLConn;
 import de.model.Auto;
 import de.model.Users;
@@ -101,7 +103,7 @@ public class Select {
 			pstmt = mySQLConn.getConnection().prepareStatement("SELECT * FROM Users");
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
-				userList.add(new Users(rs.getString("id"), rs.getString("pwd")));
+				userList.add(new Users(rs.getString("id"), rs.getString("pwd"), rs.getString("email")));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -114,5 +116,28 @@ public class Select {
 				}
 		}
 		return userList;
+	}
+	
+	public Users selectUser(Users users) {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = mySQLConn.getConnection().prepareStatement("SELECT * FROM User WHERE ID = ?");
+			pstmt.setString(1, users.getId());
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				users = new Users(rs.getString("id"), rs.getString("pwd"), rs.getString("email"));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return users;
 	}
 }

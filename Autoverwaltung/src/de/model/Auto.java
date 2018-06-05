@@ -13,6 +13,7 @@ public class Auto {
 	private final String austattungen;
 	private final String modell;
 	private final int preis;
+	
 	public Auto(String fin, String motor, int tueren, int leistung, String fahrzeugart, int sitze, Date baujahr,
 			String austattungen, String modell, int preis) {
 		this.fin = fin;

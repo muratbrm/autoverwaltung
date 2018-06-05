@@ -789,17 +789,18 @@ standard deployment descriptor.
     <servlet-name>logUserServlet</servlet-name>
     <servlet-class>de.servlets.LogUserServlet</servlet-class>
   </servlet>
-  
   <servlet>
-  <servlet-name>updateUserServlet</servlet-name>
-  <servlet-class>de.servlets.UpdateUserServlet</servlet-class>
+    <servlet-name>updateUserServlet</servlet-name>
+    <servlet-class>de.servlets.UpdateUserTypeServlet</servlet-class>
   </servlet>
-  
   <servlet>
-  <servlet-name>selectAllUsers</servlet-name>
-  <servlet-class>de.servlets.SelectAllUsers</servlet-class>
+    <servlet-name>selectAllUsers</servlet-name>
+    <servlet-class>de.servlets.SelectAllUsers</servlet-class>
   </servlet>
-  
+  <servlet>
+  	<servlet-name>logOffUserServlet</servlet-name>
+  	<servlet-class>de.servlets.LogOffUserServlet</servlet-class>
+  </servlet>
   
   
   <servlet-mapping>
@@ -819,11 +820,16 @@ standard deployment descriptor.
     <url-pattern>/loginUser</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  <servlet-name>updateUserServlet</servlet-name>
-  <url-pattern>/updateUser</url-pattern>
+    <servlet-name>updateUserServlet</servlet-name>
+    <url-pattern>/updateUser</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  <servlet-name>selectAllUsers</servlet-name>
-  <url-pattern>/selectUsers</url-pattern>
+    <servlet-name>selectAllUsers</servlet-name>
+    <url-pattern>/selectUsers</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>logOffUserServlet</servlet-name>
+  <url-pattern>/logoffUser</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

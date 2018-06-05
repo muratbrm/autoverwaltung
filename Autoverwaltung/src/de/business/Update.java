@@ -59,4 +59,49 @@ public class Update {
 				}
 		}
 	}
+	
+	public void updatePassword(Users user) {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = mySQLConn.getConnection().prepareStatement("UPDATE Users SET pwd = ? WHERE ID = ?");
+			pstmt.setString(1, user.getPwd());
+			pstmt.setString(2, user.getId());
+			pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+	}
+	/**
+	 * setzt den Status des Users auf 1 oder 0.
+	 * @param users
+	 */
+	public void setLoginState(Users users) {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = mySQLConn.getConnection().prepareStatement("UPDATE Users SET loginstatus = ? WHERE ID = ?");
+			if(Users.loginState == 0) {				
+				pstmt.setInt(1, Users.loginState = 1);
+			}else {
+				pstmt.setInt(1, Users.loginState = 0);
+			}
+			pstmt.setString(2, users.getId());
+			pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+	}
 }
