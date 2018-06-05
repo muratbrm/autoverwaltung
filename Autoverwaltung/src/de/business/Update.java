@@ -37,7 +37,10 @@ public class Update {
 				}
 		}
 	}
-	
+	/**
+	 * weist den User einen neuen UserTypen zu z.B Admin oder Standartuser.
+	 * @param user
+	 */
 	public void updateUserType(Users user) {
 		PreparedStatement pstmt = null;
 		try {

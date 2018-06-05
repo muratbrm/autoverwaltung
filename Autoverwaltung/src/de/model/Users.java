@@ -1,8 +1,8 @@
 package de.model;
 
-import de.enums.UserTypeEnum;
+import de.enums.UserTypeConst;
 
-public class Users implements UserTypeEnum{
+public class Users implements UserTypeConst{
 	private final String id;
 	private final String pwd;
 	public static String userType;
