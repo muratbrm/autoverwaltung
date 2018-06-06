@@ -1,0 +1,129 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    /*background: red;*/
+}
+
+.container {
+
+    /*background: green;*/
+    /*display: flex;*/
+    /*background-image: */
+    height: 800px;
+}
+
+.header {
+    display: flex;
+}
+
+.headline {
+    width: 100%;
+}
+
+.headline-title {
+    text-align: center;
+    width: 50%;
+
+}
+
+.auto-body {
+
+    display: flex;
+
+}
+
+.sign {
+    width: 50%;
+    margin: auto;
+}
+
+.left-part {
+
+    width: 38%;
+    /*background: darkgrey;*/
+    text-align: center;
+    height: 500px;
+    background-image: url("auto.jpg");
+
+}
+
+.register {
+    width: 62%;
+    /*background: grey;*/
+    text-align: center;
+
+}
+
+
+.input-field {
+    width:145px;
+    height: 20px;
+    border: solid 1px grey;
+    margin: 10px;
+
+}
+
+.input-field-register {
+    width:290px;
+    height: 20px;
+    border: solid 1px grey;
+    margin: 10px;
+
+}
+.button {
+    width: 162px;
+    height: 20px;
+    margin: 10px;
+    border: 0px;
+    background: green;
+    color: white;
+
+}
+.register-button {
+    width: 162px;
+    height: 20px;
+    margin: 10px;
+    border: 0px;
+    background: green;
+    color: white;
+
+
+}
+
+
+.forget-password {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.register-container {
+    width: 495px;
+    /*background: red;*/
+    margin-left:19%;
+    margin-top: 100px;
+
+
+
+}
+
+.register-fields{
+    text-align: left;
+}
+
+.register-title {
+    margin: 10px;
+    text-align: left;
+}
