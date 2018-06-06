@@ -178,4 +178,20 @@ a {
 
 }
 
+.car-table {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.table {
+    border:1px solid;
+}
+.td-table{
+    border:1px solid;
+}
+
+.tr-table-car{
+    border:1px solid;
+
+}
 
