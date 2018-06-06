@@ -5,10 +5,11 @@ body{
 
 .wrapper {
 
-    width: 100%;
+    max-width: 1260px;
     height: auto;
     margin: 0;
     padding: 0;
+    margin: auto;
     /*background: red;*/
 }
 
@@ -127,3 +128,43 @@ a {
     margin: 10px;
     text-align: left;
 }
+
+.car-content{
+    /*width: 800px;*/
+    /*margin:auto;*/
+    margin-top:60px;
+    /*background: red;*/
+
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    /*background: yellow;*/
+    width: 600px;
+    margin: auto;
+}
+
+.autodaten{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-logout {
+    width: 162px;
+    height: 20px;
+    margin: 10px;
+    border: 0px;
+    background: green;
+    color: white;
+
+}
+
+.signout {
+    width: 50%;
+    margin: auto;
+    text-align: right;
+
+}
+
+
