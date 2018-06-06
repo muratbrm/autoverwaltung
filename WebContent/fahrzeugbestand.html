@@ -3,44 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+    <script language="javascript" type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
 
-<%@ page import="de.servlets.SelectAllAutoServlet"%>
-<%
+<!--TODO: Action für Abmelden registrieren!!!-->
+
+<div class="wrapper">
+
+<div class="header">
+    <div class="headline-title">
+        <h1 class="headline-text">Autoverwaltungstool</h1>
+    </div>
+
+    <div class="signout">
+        <form action="loginUser" method="post">
+            <button type="submit" class="button-logout" name="Submit">Abmelden</button>
+
+        </form>
+        <form action="loginUser" method="post">
+            <button type="submit" class="button-logout" name="Submit">Fahrzeug neu anlegen</button>
+
+        </form>
+    </div>
+</div>
 
 
-%>
-autolist
 
-<table>
-    <tr>
-        <th>Modell</th>
-        <th>FIN</th>
-        <th>Baujahr</th>
-        <th>Motor</th>
-        <th>Türen</th>
-        <th>Leistung</th>
-        <th>Fahrzeugsart</th>
-        <th>Sitze</th>
-        <th>Ausstattung</th>
-        <th>Preis</th>
+
+<table class="car-table">
+    <tr class="tr-table-car">
+        <th class="table">Modell</th>
+        <th class="table">FIN</th>
+        <th class="table">Baujahr</th>
+        <th class="table">Motor</th>
+        <th class="table">Türen</th>
+        <th class="table">Leistung in kw</th>
+        <th class="table">Fahrzeugsart</th>
+        <th class="table">Sitze</th>
+        <th class="table">Ausstattung</th>
+        <th class="table">Preis</th>
 
     </tr>
-    <tr>
-        <td>${}</td>
-        <td>Kiez</td>
-        <td>Bierdampf</td>
-    </tr>
-    <tr>
-        <td>Buletten</td>
-        <td>Frikadellen</td>
-        <td>Fleischpflanzerl</td>
+    <tr class="tr-table-car">
+        <td class="td-table">Audi A3 </td>
+        <td class="td-table">2312312312312312312313123</td>
+        <td class="td-table">22.02.2017</td>
+        <td class="td-table">3.0 TDI</td>
+        <td class="td-table">5</td>
+        <td class="td-table">125</td>
+        <td class="td-table">Kombi</td>
+        <td class="td-table">Klima</td>
+        <td class="td-table">Ausstatung</td>
+        <td class="td-table">30000</td>
+
     </tr>
 </table>
 
 
-
+</div>
 
 </body>
 </html>
