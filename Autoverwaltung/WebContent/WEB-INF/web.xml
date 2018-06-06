@@ -798,11 +798,9 @@ standard deployment descriptor.
     <servlet-class>de.servlets.SelectAllUsers</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>logOffUserServlet</servlet-name>
-  	<servlet-class>de.servlets.LogOffUserServlet</servlet-class>
+    <servlet-name>logOffUserServlet</servlet-name>
+    <servlet-class>de.servlets.LogOffUserServlet</servlet-class>
   </servlet>
-  
-  
   <servlet-mapping>
     <servlet-name>selectAllAutosServlet</servlet-name>
     <url-pattern>/selectAllAutos</url-pattern>
@@ -828,8 +826,7 @@ standard deployment descriptor.
     <url-pattern>/selectUsers</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  <servlet-name>logOffUserServlet</servlet-name>
-  <url-pattern>/logoffUser</url-pattern>
+    <servlet-name>logOffUserServlet</servlet-name>
+    <url-pattern>/logoffUser</url-pattern>
   </servlet-mapping>
-  
 </web-app>
