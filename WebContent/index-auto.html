@@ -15,15 +15,18 @@
                 <h1 class="headline-text">Autoverwaltungstool</h1>
             </div>
             <div class="sign">
-                <input class="input-field" type="text" placeholder="Benutzername oder E-Mail">
-                <input class="input-field" type="password" placeholder="Password">
-                <button type="submit" class="button" name="Submit">Anmelden</button>
+                <form action="loginUser" method="post">
+                    <input class="input-field" type="text" placeholder="Benutzername oder E-Mail">
+                    <input class="input-field" type="password" placeholder="Password">
+                    <button type="submit" class="button" name="Submit">Anmelden</button>
+
+                </form>
+
                 <div class="forget-password">
                     <a href="http://www.google.de">Passwort vergessen?</a>
 
                 </div>
             </div>
-
         </div>
 
         <div class="auto-body">
@@ -37,7 +40,7 @@
                         <h2>Registrieren</h2>
                     </div>
                     <div class="register-fields">
-                        <form class="" action="">
+                        <form class="" action="" method="post">
                             <input class="input-field-register" type="text" placeholder="Benutzername">
                             <input class="input-field-register" type="text" placeholder="E-Mail-Adresse">
                             <input class="input-field-register" type="password" placeholder="Password">
