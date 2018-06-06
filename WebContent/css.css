@@ -167,4 +167,15 @@ a {
 
 }
 
+.fahrzeug-button {
+    width: 600px;
+    height: 40px;
+    border: 0px;
+    background: green;
+    color: white;
+
+
+
+}
+
 
