@@ -5,9 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.mysql.cj.xdevapi.Result;
-
 import de.db.MySQLConn;
 import de.model.Auto;
 import de.model.Users;
@@ -121,8 +118,8 @@ public class Select {
 	public Users selectUser(Users users) {
 		PreparedStatement pstmt = null;
 		try {
-			pstmt = mySQLConn.getConnection().prepareStatement("SELECT * FROM User WHERE ID = ?");
-			pstmt.setString(1, users.getId());
+			pstmt = mySQLConn.getConnection().prepareStatement("SELECT * FROM User WHERE Email = ?");
+			pstmt.setString(1, users.getEmail());
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				users = new Users(rs.getString("id"), rs.getString("pwd"), rs.getString("email"));
