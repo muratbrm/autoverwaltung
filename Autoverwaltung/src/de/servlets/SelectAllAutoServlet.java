@@ -34,6 +34,8 @@ public class SelectAllAutoServlet extends HttpServlet {
 		Select sel = new Select();
 		List<Auto> autoList = sel.selectAllAutoMD();
 		request.setAttribute("autoList", autoList);
+		request.getRequestDispatcher("fahrzeugbestand.jsp").forward(request, response);
+		System.out.println("funktioniert");
 	}
 
 }

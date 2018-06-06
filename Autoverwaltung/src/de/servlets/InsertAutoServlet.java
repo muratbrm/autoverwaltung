@@ -36,6 +36,7 @@ public class InsertAutoServlet extends HttpServlet {
 				Tools.stringToDate(request.getParameter("datum")), request.getParameter("austattungen"),
 				request.getParameter("modell"), Integer.parseInt(request.getParameter("preis")));
 		insert.insertAutoMD(auto);
+		request.getRequestDispatcher("fahrzeugAnlegen.jsp").forward(request, response);
 	}
 
 }

@@ -16,13 +16,13 @@ import de.model.Users;
  * Servlet implementation class SelectAllUsers
  */
 @WebServlet("/SelectAllUsers")
-public class SelectAllUsers extends HttpServlet {
+public class SelectAllUsersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SelectAllUsers() {
+    public SelectAllUsersServlet() {
         super();
     }
 

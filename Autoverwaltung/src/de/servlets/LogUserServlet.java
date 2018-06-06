@@ -27,16 +27,16 @@ public class LogUserServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id = req.getParameter("id");
-		String pwd = req.getParameter("pwd");
+		String id = req.getParameter("text");
+		String pwd = req.getParameter("password");
 		String email = req.getParameter("email");
 		Select sel = new Select();
 		Update update = new Update();
-		Users users = new Users(id, pwd, email);
+		Users users = new Users(id, pwd, "");
 		sel.setUserType(users);
 //		req.setAttribute("usertype", Users.userType);
-		req.setAttribute("users", users);
 		update.setLoginState(users);
+		req.setAttribute(Users.userType, "usertype");
 		
 		System.out.println(Users.userType);
 //		req.getRequestDispatcher("/SelectAllAutoServlet").forward(req, resp);
@@ -44,7 +44,8 @@ public class LogUserServlet extends HttpServlet {
 //		resp.getWriter().write(pwd);
 //		resp.getWriter().write(Users.userType);
 		
-		req.getRequestDispatcher("Test3.jsp").forward(req, resp);
+//		req.getRequestDispatcher("fahrzeugbestand.jsp").forward(req, resp);
+		req.getRequestDispatcher("SelectAllAutoServlet").forward(req, resp);
 	}
 
 }

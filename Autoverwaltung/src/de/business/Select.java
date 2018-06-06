@@ -76,7 +76,7 @@ public class Select {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				auto.add(new Auto(rs.getString("FIN"), rs.getString("Motor"), 
-						rs.getInt("Tueren"), rs.getInt("Leistung"), rs.getString("Fahrzeug"), 
+						rs.getInt("Tueren"), rs.getInt("Leistung"), rs.getString("Fahrzeugart"), 
 						rs.getInt("Sitze"), rs.getDate("Baujahr"), rs.getString("Austattungen"),
 						rs.getString("Modell"), rs.getInt("Preis")));
 			}

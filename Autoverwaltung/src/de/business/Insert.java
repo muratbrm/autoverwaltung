@@ -2,7 +2,6 @@ package de.business;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 import de.db.MySQLConn;
 import de.model.Auto;
 import de.model.Users;

@@ -6,10 +6,12 @@ import java.text.SimpleDateFormat;
 
 public class Tools {
 	public static Date stringToDate(String stringDate) {
-		Date date = null;
+		java.sql.Date date = null;
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 		try {
-			date = (Date) formatter.parse(stringDate);
+			java.util.Date utilStartDate = formatter.parse(stringDate);
+			date = new java.sql.Date(utilStartDate.getTime());
+//			date = (Date) formatter.parse(stringDate);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

@@ -794,8 +794,8 @@ standard deployment descriptor.
     <servlet-class>de.servlets.UpdateUserTypeServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>selectAllUsers</servlet-name>
-    <servlet-class>de.servlets.SelectAllUsers</servlet-class>
+    <servlet-name>selectAllUsersServlet</servlet-name>
+    <servlet-class>de.servlets.SelectAllUsersServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>logOffUserServlet</servlet-name>
@@ -822,7 +822,7 @@ standard deployment descriptor.
     <url-pattern>/updateUser</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>selectAllUsers</servlet-name>
+    <servlet-name>selectAllUsersServlet</servlet-name>
     <url-pattern>/selectUsers</url-pattern>
   </servlet-mapping>
   <servlet-mapping>

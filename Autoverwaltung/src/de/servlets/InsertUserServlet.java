@@ -7,21 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import de.business.Select;
-import de.message.SendEmail;
+import de.business.Insert;
 import de.model.Users;
 
 /**
- * Servlet implementation class RecoverPasswordServlet
+ * Servlet implementation class InsertUserServlet
  */
-@WebServlet("/RecoverPasswordServlet")
-public class RecoverPasswordServlet extends HttpServlet {
+@WebServlet("/InsertUserServlet")
+public class InsertUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RecoverPasswordServlet() {
+    public InsertUserServlet() {
         super();
     }
 
@@ -29,10 +28,8 @@ public class RecoverPasswordServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Select sel = new Select();
-		SendEmail send = new SendEmail();
-		Users users = sel.selectUser(new Users(request.getParameter("id"), request.getParameter("pwd"), request.getParameter("email")));
-		send.sendPassoword(users);
+		Insert insert = new Insert();
+		insert.insertUser(new Users(request.getParameter("id"), request.getParameter("pwd"), request.getParameter("email")));
 	}
 
 }
